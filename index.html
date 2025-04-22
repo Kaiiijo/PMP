@@ -89,8 +89,8 @@
             form.addEventListener("submit", (event) => {
                 event.preventDefault();
 
-                const username = document.getElementById("unamekai").value;
-                const password = document.getElementById("passkai").value;
+                const username = document.getElementById("unamekai").value.trim();
+                const password = document.getElementById("passkai").value.trim();
 
                 if (username === DEFAULT_USERNAME && password === DEFAULT_PASSWORD) {
                     alert("Login successful!");
@@ -98,7 +98,6 @@
                 } else {
                     failedAttempts++;
                     errorDiv.textContent = "Invalid username or password.";
-                    
 
                     setTimeout(() => {
                         errorDiv.textContent = "";
