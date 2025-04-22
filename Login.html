@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+    <title>
+        PMP - Login
+    </title>
+    <head>
+        
+        <link rel="icon" type="image/png" sizes="32x32" href="PMP.png">
+        <style>
+            :root {
+                --primary-color: #854d27;
+                --secondary-color: #dd7230;
+                --accent-color: #f4c95d;
+                --text-color: #04030f;
+                --background-color: #e7e393;
+                --white-color: #fff;
+                --light-gray: #e0e0e0;
+                --font-family: 'Roboto', sans-serif;
+            }
+
+            body {
+                font-family: var(--font-family);
+                margin: 0;
+                padding: 0;
+                background-color: var(--background-color);
+                color: var(--text-color);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            form {
+                font-weight: bold;
+                background: var(--white-color);
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                width: 315px;
+            }
+
+            input[type="text"], input[type="password"] {
+                width: 94%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid var(--light-gray);
+                border-radius: 4px;
+                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            button {
+                font-weight: bold;
+                width: 100%;
+                padding: 10px;
+                background-color: var(--secondary-color);
+                color: var(--white-color);
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background 0.3s, transform 0.3s;
+            }
+
+            button:hover {
+                background-color: var(--primary-color);
+                transform: scale(1.05);
+            }
+
+            .error {
+                color: red;
+                font-size: 0.9em;
+                margin-top: 10px;
+            }
+            
+            
+        </style>
+    </head>
+    <script>
+        const DEFAULT_USERNAME = "admin123";
+        const DEFAULT_PASSWORD = "admin123";
+
+        let failedAttempts = 0;
+        let isCooldown = false;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("numberForm");
+            const errorDiv = document.createElement("div");
+            errorDiv.className = "error";
+            form.appendChild(errorDiv);
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                const username = document.getElementById("admin123").value;
+                const password = document.getElementById("admin123").value;
+
+                if (username === DEFAULT_USERNAME && password === DEFAULT_PASSWORD) {
+                    alert("Login successful!");
+                    window.location.href = "Home.html";
+                } else {
+                    failedAttempts++;
+                    errorDiv.textContent = "Invalid username or password.";
+                    
+
+                    setTimeout(() => {
+                        errorDiv.textContent = "";
+                    }, 2000);
+
+                    if (failedAttempts >= 3) {
+                        isCooldown = true;
+                        alert("Too many failed attempts. Please wait 10 seconds.");
+                        disableInputs(true);
+                        setTimeout(() => {
+                            isCooldown = false;
+                            failedAttempts = 0;
+                            disableInputs(false);
+                            errorDiv.textContent = "";
+                        }, 10000);
+                    }
+                }
+            });
+            
+        });
+        function disableInputs(disable){
+                document.getElementById("unamekai").disabled = disable;
+                document.getElementById("passkai").disabled = disable;
+                document.querySelector("button[type = 'submit']").disabled = disable;
+            }
+    </script>
+    <body>
+        <a href="PMP.png"></a>
+        <form id="numberForm">
+            Username:<input type="text" id="admin123" name="admin123" required><br><br>
+            Password:<input type="password" id="admin123" name="admin123" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

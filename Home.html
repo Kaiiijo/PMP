@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMP</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="PMP.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="fade-in">
+    <h1>PMP</h1>
+    <p class="slogan">Your Perfect Meal, Planned Just for You!</p>
+    <nav>
+        <a href="Home.html" class="fade-in">Home</a>
+        <a href="user-account.html" class="fade-in">User Account</a>
+        <a href="meal-planning.html" class="fade-in">Meal Plans</a>
+        <a href="recipes.html" class="fade-in">Recipes</a>
+        <a href="newsletter.html" class="fade-in">Blog</a>
+        <a href="customer-support.html" class="fade-in">Support</a>
+    </nav>
+</header>    
+
+<main>
+    <section id="intro" class="text-center p-20 fade-in">
+        <h2>Healthy Eating Made Easy</h2>
+        <p>Discover personalized meal plans and delicious recipes tailored to your dietary preferences.</p>
+        <button class="cta" id="getStartedBtn">Get Started</button>
+    </section>
+
+    <section id="how-it-works" class="p-20 fade-in">
+        <h2 class="text-center">How It Works</h2>
+        <div class="flex justify-center">
+            <div class="how-it-works-step">
+                <h3>1.\
+                    
+                    Choose Your Meals</h3>
+                <p>Select from a variety of meal plans and recipes that fit your dietary preferences.</p>
+            </div>
+            <div class="how-it-works-step">
+                <h3>2. Get Your Groceries</h3>
+                <p>Generate a shopping list or order groceries online for delivery or pickup.</p>
+            </div>
+            <div class="how-it-works-step">
+                <h3>3. Cook and Enjoy</h3>
+                <p>Follow easy step-by-step recipes to cook delicious meals at home.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured-meal-plans" class="p-20 bg-secondary text-white fade-in">
+        <h2 class="text-center">Featured Meal Plans</h2>
+        <div class="meal-plans-grid">
+            <div class="meal-plan-card">
+                <h3>Quick & Easy</h3>
+                <p>Meals that can be prepared in under 30 minutes.</p>
+            </div>
+            <div class="meal-plan-card">
+                <h3>Gluten-Free</h3>
+                <p>Delicious meals without gluten.</p>
+            </div>
+            <div class="meal-plan-card">
+                <h3>High-Protein</h3>
+                <p>Meals packed with protein for muscle building.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter" class="p-20 bg-primary text-white text-center fade-in">
+        <h2>Stay Updated</h2>
+        <form id="newsletterForm">
+            <input type="email" id="emailInput" placeholder="Your Email" required>
+            <button type="submit" class="cta">Subscribe</button>
+        </form>
+        <div id="subscriptionMessage" class="hidden text-center mt-20">
+            <p>Thank you for subscribing! You will receive updates in your email.</p>
+        </div>
+    </section>
+</main>
+
+<footer class="text-center p-20 bg-primary text-white fade-in">
+    <p>Programmed and Developed by:<br> Kaizer Josh B. Lagare<br> BSIT-2A.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

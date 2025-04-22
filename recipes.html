@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - Personalized Meal Planning</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="PMP.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="fade-in">
+    <h1>PMP</h1>
+    <p class="slogan">Your Perfect Meal, Planned Just for You!</p>
+    <nav>
+        <a href="Home.html" class="fade-in">Home</a>
+        <a href="user-account.html" class="fade-in">User Account</a>
+        <a href="meal-planning.html" class="fade-in">Meal Plans</a>
+        <a href="recipes.html" class="fade-in">Recipes</a>
+        <a href="newsletter.html" class="fade-in">Blog</a>
+        <a href="customer-support.html" class="fade-in">Support</a>
+    </nav>
+</header>
+
+<main>
+    <section id="search-recipes" class="p-20 text-center fade-in">
+        <h2>Search Recipes</h2>
+        <input type="text" id="searchInput" placeholder="Search for a recipe..." />
+        <button id="searchBtn" class="cta">Search</button>
+        <div id="searchResults"></div>
+    </section>
+
+    <section id="popular-recipes" class="p-20 fade-in">
+        <h2 class="text-center">Popular Recipes</h2>
+        <div class="meal-plans-grid">
+            <div class="recipe-card">
+                <h3>Spaghetti Bolognese</h3>
+                <p>A classic Italian pasta dish with rich tomato sauce and ground meat.</p>
+            </div>
+            <div class="recipe-card">
+                <h3>Chicken Caesar Salad</h3>
+                <p>A fresh salad with grilled chicken, crisp lettuce, and Caesar dressing.</p>
+            </div>
+            <div class="recipe-card">
+                <h3>Vegan Buddha Bowl</h3>
+                <p>A colorful and nutritious vegan meal with grains, veggies, and protein.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="submit-recipe" class="p-20 bg-secondary text-white fade-in">
+        <h2 class="text-center">Submit a Recipe</h2>
+        <form id="recipeForm" class="flex flex-column align-center">
+            <label for="recipeName">Recipe Name</label>
+            <input type="text" id="recipeName" name="recipeName" required>
+
+            <label for="ingredients">Ingredients</label>
+            <textarea id="ingredients" name="ingredients" required></textarea>
+
+            <label for="instructions">Instructions</label>
+            <textarea id="instructions" name="instructions" required></textarea>
+
+            <button type="submit" class="cta">Submit Recipe</button>
+        </form>
+    </section>
+</main>
+
+<footer class="text-center p-20 bg-primary text-white fade-in">
+    <p>Programmed and Developed By:<br>Kaizer Josh B. Lagare<br>BSIT-2A.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

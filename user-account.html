@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account - Personalized Meal Planning</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="PMP.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="fade-in">
+    <h1>PMP</h1>
+    <p class="slogan">Your Perfect Meal, Planned Just for You!</p>
+    <nav>
+        <a href="Home.html" class="fade-in">Home</a>
+        <a href="user-account.html" class="fade-in">User Account</a>
+        <a href="meal-planning.html" class="fade-in">Meal Plans</a>
+        <a href="recipes.html" class="fade-in">Recipes</a>
+        <a href="newsletter.html" class="fade-in">Blog</a>
+        <a href="customer-support.html" class="fade-in">Support</a>
+    </nav>
+</header>
+
+<main class="account-container fade-in">
+    <aside class="sidebar fade-in">
+        <ul>
+            <li><a href="#profile" class="tab-link active">Profile</a></li>
+            <li><a href="#subscription" class="tab-link">Subscription</a></li>
+            <li><a href="#settings" class="tab-link">Settings</a></li>
+        </ul>
+    </aside>
+
+    <section class="account-content fade-in">
+        <div class="tab-content active" id="profile">
+            <h2>Profile</h2>
+            <div class="profile-card">
+                <p><strong>Full Name:</strong> <span id="fullName">Kaizer Lagare</span></p>
+                <p><strong>Email Address:</strong> <span id="emailAddress">kaizerlagare9@gmail.com</span></p>
+                <button class="cta" id="editProfileBtn">Edit Profile</button>
+                <button class="cta" id="logoutBtn">Logout</button>
+            </div>
+            <form id="editProfileForm" class="hidden">
+                <label for="editFullName">Full Name</label>
+                <input type="text" id="editFullName" value="Kaizer Lagare" required>
+                <label for="editEmailAddress">Email Address</label>
+                <input type="email" id="editEmailAddress" value="kaizerlagare9@gmail.com" required>
+                <button type="submit" class="cta">Save Changes</button>
+                <button type="button" class="cta" id="cancelEditProfileBtn">Cancel</button>
+            </form>
+        </div>
+
+        <div class="tab-content hidden" id="subscription">
+            <h2>Subscription Plan</h2>
+            <form id="subscriptionForm">
+                <label for="plan">Choose Your Plan</label>
+                <select id="plan">
+                    <option value="free">Free</option>
+                    <option value="premium">Premium - $9.99/month</option>
+                    <option value="pro">Pro - $19.99/month</option>
+                </select>
+                <button type="submit" class="cta">Update Plan</button>
+            </form>
+        </div>
+
+        <div class="tab-content hidden" id="settings">
+            <h2>Settings</h2>
+            <form id="settingsForm">
+                <label for="language">Preferred Language</label>
+                <select id="language">
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                </select>
+
+                <label for="notifications">Email Notifications</label>
+                <select id="notifications">
+                    <option value="enabled">Enabled</option>
+                    <option value="disabled">Disabled</option>
+                </select>
+
+                <button type="submit" class="cta">Save Settings</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="text-center p-20 bg-primary text-white fade-in">
+    <p>Programmed and Developed By:<br>Kaizer Josh B. Lagare<br>BSIT-2A.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
