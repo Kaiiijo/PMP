@@ -89,8 +89,8 @@
             form.addEventListener("submit", (event) => {
                 event.preventDefault();
 
-                const username = document.getElementById("admin123").value;
-                const password = document.getElementById("admin123").value;
+                const username = document.getElementById("unamekai").value;
+                const password = document.getElementById("passkai").value;
 
                 if (username === DEFAULT_USERNAME && password === DEFAULT_PASSWORD) {
                     alert("Login successful!");
@@ -128,8 +128,8 @@
     <body>
         <a href="PMP.png"></a>
         <form id="numberForm">
-            Username:<input type="text" id="admin123" name="admin123" required><br><br>
-            Password:<input type="password" id="admin123" name="admin123" required><br><br>
+            Username:<input type="text" id="unamekai" name="unamekai" required><br><br>
+            Password:<input type="password" id="passkai" name="passkai" required><br><br>
             <button type="submit">Submit</button>
         </form>
     </body>
