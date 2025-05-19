@@ -1,2 +1,2 @@
-Username: Admin123
-Password: Admin123
+Username: admin123
+Password: admin123
