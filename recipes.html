@@ -3,32 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes - Personalized Meal Planning</title>
+    <meta name="description" content="Browse and submit delicious recipes. Find cooking inspiration from our collection of popular recipes.">
+    <meta name="keywords" content="recipes, meal planning, cooking, food, healthy recipes, PMP">
+    <meta name="author" content="Kaizer Josh B. Lagare">
+    <title>Recipes - PMP | Perfect Meal Planner</title>
     <link rel="icon" type="image/png" sizes="32x32" href="PMP.png">
-
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <header class="fade-in">
-    <h1>PMP</h1>
-    <p class="slogan">Your Perfect Meal, Planned Just for You!</p>
-    <nav>
-        <a href="Home.html" class="fade-in">Home</a>
-        <a href="user-account.html" class="fade-in">User Account</a>
-        <a href="meal-planning.html" class="fade-in">Meal Plans</a>
-        <a href="recipes.html" class="fade-in">Recipes</a>
-        <a href="newsletter.html" class="fade-in">Blog</a>
-        <a href="customer-support.html" class="fade-in">Support</a>
-    </nav>
+    <div class="header-content">
+        <div class="header-logo">
+            <img src="PMP.png" alt="PMP Logo" class="logo">
+            <h1>PMP</h1>
+        </div>
+        <p class="slogan">Your Perfect Meal, Planned Just for You!</p>
+    </div>
+    
+    <div class="nav-container">
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+        <nav class="main-nav">
+            <a href="Home.html" class="fade-in">Home</a>
+            <a href="user-account.html" class="fade-in">User Account</a>
+            <a href="meal-planning.html" class="fade-in">Meal Plans</a>
+            <a href="recipes.html" class="fade-in">Recipes</a>
+            <a href="newsletter.html" class="fade-in">Blog</a>
+            <a href="customer-support.html" class="fade-in">Support</a>
+            <a href="#" id="logoutBtn" class="fade-in logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+    </div>
 </header>
 
 <main>
     <section id="search-recipes" class="p-20 text-center fade-in">
         <h2>Search Recipes</h2>
-        <input type="text" id="searchInput" placeholder="Search for a recipe..." />
-        <button id="searchBtn" class="cta">Search</button>
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search for a recipe..." />
+            </div>
+            <button id="searchBtn" class="cta">Search</button>
+        </div>
         <div id="searchResults"></div>
     </section>
 
@@ -36,16 +59,37 @@
         <h2 class="text-center">Popular Recipes</h2>
         <div class="meal-plans-grid">
             <div class="recipe-card">
+                <div class="recipe-icon"><i class="fas fa-pizza-slice"></i></div>
                 <h3>Spaghetti Bolognese</h3>
                 <p>A classic Italian pasta dish with rich tomato sauce and ground meat.</p>
+                <div class="recipe-meta">
+                    <span><i class="fas fa-clock"></i> 30 min</span>
+                    <span><i class="fas fa-fire"></i> 450 cal</span>
+                    <span><i class="fas fa-star"></i> 4.8</span>
+                </div>
+                <a href="#" class="card-link">View Recipe</a>
             </div>
             <div class="recipe-card">
+                <div class="recipe-icon"><i class="fas fa-leaf"></i></div>
                 <h3>Chicken Caesar Salad</h3>
                 <p>A fresh salad with grilled chicken, crisp lettuce, and Caesar dressing.</p>
+                <div class="recipe-meta">
+                    <span><i class="fas fa-clock"></i> 15 min</span>
+                    <span><i class="fas fa-fire"></i> 320 cal</span>
+                    <span><i class="fas fa-star"></i> 4.5</span>
+                </div>
+                <a href="#" class="card-link">View Recipe</a>
             </div>
             <div class="recipe-card">
+                <div class="recipe-icon"><i class="fas fa-seedling"></i></div>
                 <h3>Vegan Buddha Bowl</h3>
                 <p>A colorful and nutritious vegan meal with grains, veggies, and protein.</p>
+                <div class="recipe-meta">
+                    <span><i class="fas fa-clock"></i> 20 min</span>
+                    <span><i class="fas fa-fire"></i> 380 cal</span>
+                    <span><i class="fas fa-star"></i> 4.7</span>
+                </div>
+                <a href="#" class="card-link">View Recipe</a>
             </div>
         </div>
     </section>
@@ -53,25 +97,45 @@
     <section id="submit-recipe" class="p-20 bg-secondary text-white fade-in">
         <h2 class="text-center">Submit a Recipe</h2>
         <form id="recipeForm" class="flex flex-column align-center">
-            <label for="recipeName">Recipe Name</label>
-            <input type="text" id="recipeName" name="recipeName" required>
+            <div class="form-group">
+                <label for="recipeName"><i class="fas fa-utensils"></i> Recipe Name</label>
+                <input type="text" id="recipeName" name="recipeName" required>
+            </div>
 
-            <label for="ingredients">Ingredients</label>
-            <textarea id="ingredients" name="ingredients" required></textarea>
+            <div class="form-group">
+                <label for="ingredients"><i class="fas fa-list-ul"></i> Ingredients</label>
+                <textarea id="ingredients" name="ingredients" required placeholder="Enter one ingredient per line"></textarea>
+            </div>
 
-            <label for="instructions">Instructions</label>
-            <textarea id="instructions" name="instructions" required></textarea>
+            <div class="form-group">
+                <label for="instructions"><i class="fas fa-tasks"></i> Instructions</label>
+                <textarea id="instructions" name="instructions" required placeholder="Enter step-by-step instructions"></textarea>
+            </div>
 
-            <button type="submit" class="cta">Submit Recipe</button>
+            <div class="form-group">
+                <label for="cookTime"><i class="fas fa-clock"></i> Cooking Time (minutes)</label>
+                <input type="number" id="cookTime" name="cookTime" min="1" required>
+            </div>
+
+            <button type="submit" class="cta"><i class="fas fa-paper-plane"></i> Submit Recipe</button>
         </form>
+        <div id="recipeSubmissionMessage" class="hidden text-center mt-20">
+            <p>Thank you for submitting your recipe! It will be reviewed and added to our collection soon.</p>
+        </div>
     </section>
 </main>
 
 <footer class="text-center p-20 bg-primary text-white fade-in">
-    <p>Programmed and Developed By:<br>Kaizer Josh B. Lagare<br>BSIT-2A.</p>
+    <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+    </div>
+    <p>&copy; 2023 PMP. All rights reserved.</p>
+    <p>Programmed and Developed by: Kaizer Josh B. Lagare</p>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
